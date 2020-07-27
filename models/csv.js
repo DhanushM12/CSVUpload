@@ -18,7 +18,7 @@ const csvSchema = new mongoose.Schema(
   }
 );
 
-//passing the productSchema instance to mongoose.model
+//passing the csvSchema instance to mongoose.model
 const CSV = mongoose.model("CSV", csvSchema);
 
 //exporting the schema to be used further
