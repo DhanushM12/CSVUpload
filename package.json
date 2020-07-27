@@ -4,6 +4,7 @@
   "description": "CSV Visualizer",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Dhanush Mukhi",
@@ -11,6 +12,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
-    "mongoose": "^5.9.25"
+    "mongoose": "^5.9.25",
+    "path": "^0.12.7"
   }
 }
