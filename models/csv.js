@@ -4,11 +4,11 @@ const mongoose = require("mongoose");
 //csv schema design
 const csvSchema = new mongoose.Schema(
   {
-    path: {
+    name: {
       type: String,
       required: true,
     },
-    name: {
+    path: {
       type: String,
       required: true,
     },

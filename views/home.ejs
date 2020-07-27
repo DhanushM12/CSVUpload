@@ -1,1 +1,14 @@
 <h3>MY CSV Home Page</h3>
+<form action="/csv/upload" enctype="multipart/form-data" method="POST">
+  <input
+    type="file"
+    name="csvfile"
+    accept=".csv, text/csv"
+    placeholder="Upload CSV File"
+  />
+  <input type="submit" value="Upload" />
+</form>
+<br />
+<% if(locals.message) { %>
+<p><%=message%></p>
+<% } %>

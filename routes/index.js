@@ -9,5 +9,6 @@ router.get("/", homeController.home);
 
 //for any other routes, access from here
 //router.use('/routerName', require('./routerFile'));
+router.use("/csv", require("./csv"));
 
 module.exports = router;
