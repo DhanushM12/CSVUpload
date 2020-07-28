@@ -1,0 +1,12 @@
+<h1>My Uploaded Files</h1>
+<div>
+  <% if(files) { %>
+  <div>
+    <% for(file of files){%>
+    <p>
+      <a href="/csv/<%= file.id %>/view"><%= file.name %></a>
+    </p>
+    <% } %>
+  </div>
+  <% } %>
+</div>

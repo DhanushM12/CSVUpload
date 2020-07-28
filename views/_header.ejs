@@ -1,3 +1,17 @@
 <header>
   <h1>CSV Upload</h1>
+  <% if(locals.path){ %>
+  <div>
+    <ul id="nav">
+      <% if(path == "visualizer") { %>
+      <li><a href="/csv/">Return To HomePage</a></li>
+      <li><a href="/">Upload a New CSV File</a></li>
+      <% } %> <% if(path == "files") { %>
+      <li><a href="/">Return To HomePage</a></li>
+      <% } %> <% if(path == "home") { %>
+      <li><a href="/csv">View My All CSV Files</a></li>
+      <% } %>
+    </ul>
+  </div>
+  <% } %>
 </header>

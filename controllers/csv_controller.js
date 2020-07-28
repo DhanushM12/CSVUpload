@@ -31,3 +31,17 @@ module.exports.uploadFile = async function (req, res) {
     });
   }
 };
+
+//Display a list of all uploaded csv files
+module.exports.listCSVFiles = async function (req, res) {
+  try {
+    let allFiles = await CsvDB.find({});
+    return res.render("uploadedFiles", {
+      title: "CSV Files",
+      path: "files",
+      files: allFiles,
+    });
+  } catch (err) {
+    return res.redirect("back");
+  }
+};
