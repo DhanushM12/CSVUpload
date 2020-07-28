@@ -37,5 +37,7 @@ var upload = multer({
 router.post("/upload", upload.single("csvfile"), csvController.uploadFile);
 //route to Display a list of all uploaded csv files
 router.get("/", csvController.listCSVFiles);
+//route to display all the data (with column headers) in a table
+router.get("/:id/view", csvController.viewCSVFileData);
 
 module.exports = router;

@@ -37,11 +37,31 @@ module.exports.listCSVFiles = async function (req, res) {
   try {
     let allFiles = await CsvDB.find({});
     return res.render("uploadedFiles", {
-      title: "CSV Files",
+      title: "My CSV Files",
       path: "files",
       files: allFiles,
     });
   } catch (err) {
+    return res.redirect("back");
+  }
+};
+
+//to display all the data in a table
+module.exports.viewCSVFileData = async function (req, res) {
+  try {
+    let fileDoc = await CsvDB.findById(req.params.id);
+    let csvFilePath = path.join(__dirname, "../", "uploads/", fileDoc.path);
+    console.log(csvFilePath);
+    const jsonArray = await csvJson().fromFile(csvFilePath);
+    return res.render("display", {
+      title: "Display CSV",
+      path: "visualizer",
+      name: fileDoc.name,
+      jsonArray: jsonArray,
+    });
+  } catch (err) {
+    //if error
+    console.log(err);
     return res.redirect("back");
   }
 };
